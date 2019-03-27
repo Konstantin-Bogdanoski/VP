@@ -1,0 +1,7 @@
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\bin\Debug\Lab14.exe.config
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\bin\Debug\Lab14.exe
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\bin\Debug\Lab14.pdb
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\obj\Debug\Lab14.csprojAssemblyReference.cache
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\obj\Debug\Lab14.csproj.CoreCompileInputs.cache
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\obj\Debug\Lab14.exe
+C:\Users\konst\source\repos\Lab01\Lab14\Lab14\obj\Debug\Lab14.pdb
