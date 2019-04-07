@@ -8,3 +8,13 @@ C:\Users\konst\source\repos\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKosh
 C:\Users\konst\source\repos\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.csproj.CoreCompileInputs.cache
 C:\Users\konst\source\repos\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.exe
 C:\Users\konst\source\repos\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.pdb
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\bin\Debug\PotroshuvachkaKoshnichka.exe.config
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\bin\Debug\PotroshuvachkaKoshnichka.exe
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\bin\Debug\PotroshuvachkaKoshnichka.pdb
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.csprojAssemblyReference.cache
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.Form1.resources
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.Properties.Resources.resources
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.csproj.GenerateResource.cache
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.csproj.CoreCompileInputs.cache
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.exe
+C:\Users\konst\Source\Repos\Konstantin-Bogdanoski\VP\Lab04\PotroshuvachkaKoshnichka\PotroshuvachkaKoshnichka\obj\Debug\PotroshuvachkaKoshnichka.pdb
