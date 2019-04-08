@@ -1,4 +1,5 @@
 # VP
+# READ THE WIKI
 This repository contains all work done by Konstantin Bogdanoski
 for the subject Visual Programming (Vizuelno Programiranje), as 
 part of his FCSE Course.
