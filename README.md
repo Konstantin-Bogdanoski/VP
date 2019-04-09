@@ -1,5 +1,5 @@
-# VP
-# READ THE WIKI
+# Visual Programming
+# [READ THE WIKI](https://github.com/Konstantin-Bogdanoski/VP/wiki)
 This repository contains all work done by Konstantin Bogdanoski
 for the subject Visual Programming (Vizuelno Programiranje), as 
 part of the FCSE Course.
