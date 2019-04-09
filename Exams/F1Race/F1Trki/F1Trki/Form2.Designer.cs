@@ -37,8 +37,10 @@
             this.addDriverOK = new System.Windows.Forms.Button();
             this.addDriverNOK = new System.Windows.Forms.Button();
             this.racerNameError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.driverAgeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.racerNumericAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racerNameError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverAgeError)).BeginInit();
             this.SuspendLayout();
             // 
             // driverNameLabel
@@ -78,6 +80,12 @@
             this.racerNumericAge.Name = "racerNumericAge";
             this.racerNumericAge.Size = new System.Drawing.Size(120, 22);
             this.racerNumericAge.TabIndex = 3;
+            this.racerNumericAge.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.racerNumericAge.Validating += new System.ComponentModel.CancelEventHandler(this.racerNumericAge_Validating);
             // 
             // racerFirstBool
             // 
@@ -113,6 +121,10 @@
             // 
             this.racerNameError.ContainerControl = this;
             // 
+            // driverAgeError
+            // 
+            this.driverAgeError.ContainerControl = this;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,6 +141,7 @@
             this.Text = "Додај возач";
             ((System.ComponentModel.ISupportInitialize)(this.racerNumericAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racerNameError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverAgeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Button addDriverOK;
         private System.Windows.Forms.Button addDriverNOK;
         private System.Windows.Forms.ErrorProvider racerNameError;
+        private System.Windows.Forms.ErrorProvider driverAgeError;
     }
 }

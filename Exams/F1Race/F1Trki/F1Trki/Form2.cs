@@ -49,5 +49,20 @@ namespace F1Trki
                 racerNameError.SetError(driverNameTextBox,null);
             }
         }
+
+        private void racerNumericAge_Validating(object sender, CancelEventArgs e)
+        {
+            if(racerNumericAge.Value < 18 || racerNumericAge.Value > 90)
+            {
+                e.Cancel = true;
+                racerNumericAge.Focus();
+                driverAgeError.SetError(racerNumericAge, "Возраста не е во дозволени граници 18-90");
+            }
+            else
+            {
+                e.Cancel = false;
+                driverAgeError.SetError(racerNumericAge, null);
+            }
+        }
     }
 }

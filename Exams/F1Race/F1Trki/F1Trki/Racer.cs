@@ -50,8 +50,6 @@ namespace F1Trki
                 {
                     int min = int.Parse(lap.Substring(0, 2));
                     int sec = int.Parse(lap.Substring(3, 2));
-                    int temp = aboveSeconds / 60;
-                    int temp2 = aboveSeconds % 60;
                     if (min * 60 + sec > aboveSeconds)
                     {
                         int bestMin = int.Parse(bestLap.Substring(0, 2));
@@ -62,6 +60,8 @@ namespace F1Trki
                             bestLap = lap;
                     }
                 }
+                if (int.Parse(bestLap.Substring(0, 2)) * 60 + int.Parse(bestLap.Substring(3, 2)) < aboveSeconds)
+                    return null;
                 return bestLap;
             }
             return null;

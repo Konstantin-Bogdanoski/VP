@@ -59,7 +59,13 @@ namespace F1Trki
                 lapsListBox.DataSource = null;
                 lapsListBox.DataSource = selectedRacer.Laps;
 
-                bestLapTextBox.Text = selectedRacer.getBestLap((int)numericFilter.Value);
+                String bestLap = selectedRacer.getBestLap((int)numericFilter.Value);
+
+                if(bestLap is null)
+                    bestLapTextBox.Text = "NO LAP EXISTS";
+
+                else
+                    bestLapTextBox.Text = bestLap;
             }
         }
 
@@ -116,6 +122,11 @@ namespace F1Trki
                 numericMinutes.Value += 1;
                 numericSeconds.Value = 0;
             }
+        }
+
+        private void bestLapTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
