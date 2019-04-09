@@ -45,7 +45,8 @@ namespace F1Trki
             Form2 frm2 = new Form2(newRacer);
             frm2.ShowDialog();
             newRacer = frm2.Racer;
-            racerList.Add(newRacer);
+            if(!(newRacer is null))
+                racerList.Add(newRacer);
 
             driversListBox.DataSource = null;
             driversListBox.DataSource = racerList;

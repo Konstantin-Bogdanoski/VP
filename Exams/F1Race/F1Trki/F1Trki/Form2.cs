@@ -21,6 +21,7 @@ namespace F1Trki
 
         private void addDriverNOK_Click(object sender, EventArgs e)
         {
+            this.Racer = null;
             this.Close();
         }
 
