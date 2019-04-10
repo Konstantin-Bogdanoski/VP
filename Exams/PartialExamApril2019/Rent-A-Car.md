@@ -45,6 +45,6 @@
 ## ДОПОЛНИТЕЛНИ ИНФОРМАЦИИ
 `Filijala.ToString() =  filijala.Name + " - " + filijala.Location + " - " + filijala.Code;`
 
-`Car.ToString() = car.Name + " - " + car.Price + " - " + (car.Reserved ? "Резервиран" : "Достапен")`
+`Car.ToString() = car.Name + " - " + car.Price + " - " + (car.Reserved ? "Резервиран" : "Достапен");`
 
 
