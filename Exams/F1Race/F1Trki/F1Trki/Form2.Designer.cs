@@ -139,6 +139,7 @@
             this.Controls.Add(this.driverNameLabel);
             this.Name = "Form2";
             this.Text = "Додај возач";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.racerNumericAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racerNameError)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverAgeError)).EndInit();

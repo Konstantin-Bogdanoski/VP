@@ -65,5 +65,11 @@ namespace F1Trki
                 driverAgeError.SetError(racerNumericAge, null);
             }
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Racer = null;
+            this.Close();
+        }
     }
 }
