@@ -35,19 +35,22 @@
             this.clearProductListBoxButton = new System.Windows.Forms.Button();
             this.clearBasketListBoxButton = new System.Windows.Forms.Button();
             this.productDetailsBox = new System.Windows.Forms.GroupBox();
-            this.productNameLabel = new System.Windows.Forms.Label();
-            this.productNameTextBox = new System.Windows.Forms.TextBox();
-            this.productCategoryTextBox = new System.Windows.Forms.TextBox();
-            this.productCategoryLabel = new System.Windows.Forms.Label();
             this.productPriceTextBox = new System.Windows.Forms.TextBox();
             this.productPriceLabel = new System.Windows.Forms.Label();
+            this.productCategoryTextBox = new System.Windows.Forms.TextBox();
+            this.productCategoryLabel = new System.Windows.Forms.Label();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
+            this.productNameLabel = new System.Windows.Forms.Label();
             this.addToBasketButton = new System.Windows.Forms.Button();
             this.removeFromBasketButton = new System.Windows.Forms.Button();
             this.deleteProductButton = new System.Windows.Forms.Button();
             this.addProductButton = new System.Windows.Forms.Button();
             this.totalPriceTextBox = new System.Windows.Forms.TextBox();
             this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.productQuantityLabel = new System.Windows.Forms.Label();
+            this.numericProductQuantity = new System.Windows.Forms.NumericUpDown();
             this.productDetailsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericProductQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // productListBox
@@ -109,6 +112,8 @@
             // 
             // productDetailsBox
             // 
+            this.productDetailsBox.Controls.Add(this.numericProductQuantity);
+            this.productDetailsBox.Controls.Add(this.productQuantityLabel);
             this.productDetailsBox.Controls.Add(this.productPriceTextBox);
             this.productDetailsBox.Controls.Add(this.productPriceLabel);
             this.productDetailsBox.Controls.Add(this.productCategoryTextBox);
@@ -122,22 +127,23 @@
             this.productDetailsBox.TabStop = false;
             this.productDetailsBox.Text = "Детали за продуктот";
             // 
-            // productNameLabel
+            // productPriceTextBox
             // 
-            this.productNameLabel.AutoSize = true;
-            this.productNameLabel.Location = new System.Drawing.Point(7, 22);
-            this.productNameLabel.Name = "productNameLabel";
-            this.productNameLabel.Size = new System.Drawing.Size(112, 17);
-            this.productNameLabel.TabIndex = 0;
-            this.productNameLabel.Text = "Име на продукт";
+            this.productPriceTextBox.Location = new System.Drawing.Point(10, 177);
+            this.productPriceTextBox.Name = "productPriceTextBox";
+            this.productPriceTextBox.ReadOnly = true;
+            this.productPriceTextBox.Size = new System.Drawing.Size(109, 22);
+            this.productPriceTextBox.TabIndex = 5;
+            this.productPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // productNameTextBox
+            // productPriceLabel
             // 
-            this.productNameTextBox.Location = new System.Drawing.Point(10, 43);
-            this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.ReadOnly = true;
-            this.productNameTextBox.Size = new System.Drawing.Size(240, 22);
-            this.productNameTextBox.TabIndex = 1;
+            this.productPriceLabel.AutoSize = true;
+            this.productPriceLabel.Location = new System.Drawing.Point(7, 157);
+            this.productPriceLabel.Name = "productPriceLabel";
+            this.productPriceLabel.Size = new System.Drawing.Size(120, 17);
+            this.productPriceLabel.TabIndex = 4;
+            this.productPriceLabel.Text = "Цена на продукт";
             // 
             // productCategoryTextBox
             // 
@@ -156,23 +162,22 @@
             this.productCategoryLabel.TabIndex = 2;
             this.productCategoryLabel.Text = "Категорија на продукт";
             // 
-            // productPriceTextBox
+            // productNameTextBox
             // 
-            this.productPriceTextBox.Location = new System.Drawing.Point(10, 177);
-            this.productPriceTextBox.Name = "productPriceTextBox";
-            this.productPriceTextBox.ReadOnly = true;
-            this.productPriceTextBox.Size = new System.Drawing.Size(240, 22);
-            this.productPriceTextBox.TabIndex = 5;
-            this.productPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.productNameTextBox.Location = new System.Drawing.Point(10, 43);
+            this.productNameTextBox.Name = "productNameTextBox";
+            this.productNameTextBox.ReadOnly = true;
+            this.productNameTextBox.Size = new System.Drawing.Size(240, 22);
+            this.productNameTextBox.TabIndex = 1;
             // 
-            // productPriceLabel
+            // productNameLabel
             // 
-            this.productPriceLabel.AutoSize = true;
-            this.productPriceLabel.Location = new System.Drawing.Point(7, 157);
-            this.productPriceLabel.Name = "productPriceLabel";
-            this.productPriceLabel.Size = new System.Drawing.Size(120, 17);
-            this.productPriceLabel.TabIndex = 4;
-            this.productPriceLabel.Text = "Цена на продукт";
+            this.productNameLabel.AutoSize = true;
+            this.productNameLabel.Location = new System.Drawing.Point(7, 22);
+            this.productNameLabel.Name = "productNameLabel";
+            this.productNameLabel.Size = new System.Drawing.Size(112, 17);
+            this.productNameLabel.TabIndex = 0;
+            this.productNameLabel.Text = "Име на продукт";
             // 
             // addToBasketButton
             // 
@@ -232,6 +237,22 @@
             this.totalPriceLabel.TabIndex = 6;
             this.totalPriceLabel.Text = "Вкупно";
             // 
+            // productQuantityLabel
+            // 
+            this.productQuantityLabel.AutoSize = true;
+            this.productQuantityLabel.Location = new System.Drawing.Point(138, 157);
+            this.productQuantityLabel.Name = "productQuantityLabel";
+            this.productQuantityLabel.Size = new System.Drawing.Size(73, 17);
+            this.productQuantityLabel.TabIndex = 6;
+            this.productQuantityLabel.Text = "Количина";
+            // 
+            // numericProductQuantity
+            // 
+            this.numericProductQuantity.Location = new System.Drawing.Point(141, 177);
+            this.numericProductQuantity.Name = "numericProductQuantity";
+            this.numericProductQuantity.Size = new System.Drawing.Size(109, 22);
+            this.numericProductQuantity.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,6 +275,7 @@
             this.Text = "Form1";
             this.productDetailsBox.ResumeLayout(false);
             this.productDetailsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericProductQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +302,8 @@
         private System.Windows.Forms.Button addProductButton;
         private System.Windows.Forms.TextBox totalPriceTextBox;
         private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.NumericUpDown numericProductQuantity;
+        private System.Windows.Forms.Label productQuantityLabel;
     }
 }
 

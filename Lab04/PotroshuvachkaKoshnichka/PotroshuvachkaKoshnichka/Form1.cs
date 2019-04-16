@@ -13,24 +13,24 @@ namespace PotroshuvachkaKoshnichka
     public partial class Form1 : Form
     {
         private List<Product> productList;
-        private List<Product> basketList;
+        private List<ProductItem> basketList;
         public Form1()
         {
             InitializeComponent();
             productList = new List<Product>();
-            basketList = new List<Product>();
+            basketList = new List<ProductItem>();
 
-            Product p1 = new Product("Месо","Храна",100);
+            Product p1 = new Product("Месо","Храна",100, 50);
             productList.Add(p1);
-            Product p2 = new Product("Млеко", "Храна", 50);
+            Product p2 = new Product("Млеко", "Храна", 50, 50);
             productList.Add(p2);
-            Product p3 = new Product("Вино", "Алкохол", 300);
+            Product p3 = new Product("Вино", "Алкохол", 300, 50);
             productList.Add(p3);
-            Product p4 = new Product("Пиво", "Алкохол", 100);
+            Product p4 = new Product("Пиво", "Алкохол", 100, 50);
             productList.Add(p4);
-            Product p5 = new Product("Шампон", "Хигиена", 150);
+            Product p5 = new Product("Шампон", "Хигиена", 150, 50);
             productList.Add(p5);
-            Product p6 = new Product("Паста за заби", "Хигиена", 80);
+            Product p6 = new Product("Паста за заби", "Хигиена", 80, 50);
             productList.Add(p6);
 
 
@@ -55,8 +55,8 @@ namespace PotroshuvachkaKoshnichka
             double price = 0;
             if (!(basketList is null))
             {
-                foreach (Product product in basketList)
-                    price += product.productPrice;
+                foreach (ProductItem product in basketList)
+                    price += product.product.productPrice * product.quantity;
             }
             totalPriceTextBox.Text = String.Format("{0:0.00}", price) + " ден.";
         }
@@ -86,7 +86,7 @@ namespace PotroshuvachkaKoshnichka
             var choice = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (choice == DialogResult.Yes)
             {
-                basketList = new List<Product>();
+                basketList = new List<ProductItem>();
                 basketListBox.DataSource = null;
                 basketListBox.DataSource = basketList;
             }
@@ -96,20 +96,39 @@ namespace PotroshuvachkaKoshnichka
         private void addToBasketButton_Click(object sender, EventArgs e)
         {
             Product selected = productListBox.SelectedItem as Product;
-            if(!(selected is null))
-            {
-                basketList.Add(selected);
-                basketListBox.DataSource = null;
-                basketListBox.DataSource = basketList;
+            if(!(selected is null) && !(numericProductQuantity is null))
+            { 
+                int quantity = (int)numericProductQuantity.Value;
+                if(quantity > selected.productQuantity)
+                {
+                    MessageBox.Show("Нема доволно парчиња на залиха!");
+                }
+                else if(quantity == 0)
+                {
+                    MessageBox.Show("Избравте 0 парчиња од продуктот!");
+                }
+                else
+                {
+                    ProductItem newProd = new ProductItem();
+                    newProd.product = selected;
+                    newProd.quantity = quantity;
+                    selected.productQuantity -= quantity;
+                    basketList.Add(newProd);
+                    basketListBox.DataSource = null;
+                    basketListBox.DataSource = basketList;
+                }
             }
             updateTotalPrice(sender, e);
         }
 
         private void removeFromBasketButton_Click(object sender, EventArgs e)
         {
-            Product selected = basketListBox.SelectedItem as Product;
+            ProductItem selected = basketListBox.SelectedItem as ProductItem;
             if (!(selected is null))
             {
+                Product tempProduct = selected.product;
+                tempProduct.productQuantity += selected.quantity;
+
                 basketList.Remove(selected);
                 basketListBox.DataSource = null;
                 basketListBox.DataSource = basketList;

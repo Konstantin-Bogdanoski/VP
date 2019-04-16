@@ -8,16 +8,18 @@ namespace PotroshuvachkaKoshnichka
 {
     public class Product
     {
-        public Product(string productName, string productCategory, double productPrice)
+        public Product(string productName, string productCategory, double productPrice, int productQuantity)
         {
             this.productName = productName ?? throw new ArgumentNullException(nameof(productName));
             this.productCategory = productCategory ?? throw new ArgumentNullException(nameof(productCategory));
             this.productPrice = productPrice;
+            this.productQuantity = productQuantity;
         }
 
         public String productName { get; set; }
         public String productCategory { get; set; }
         public double productPrice { get; set; }
+        public int productQuantity { get; set; }
 
         public override bool Equals(object obj)
         {

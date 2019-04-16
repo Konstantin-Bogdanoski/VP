@@ -65,6 +65,7 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

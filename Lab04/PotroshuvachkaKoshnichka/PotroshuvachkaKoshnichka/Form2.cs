@@ -23,12 +23,14 @@ namespace PotroshuvachkaKoshnichka
             String name = newProductNameTextBox.Text;
             String category = newProductCategoryTextBox.Text;
             String price = newProductPriceTextBox.Text;
+            int quantity = (int)numericProductQuantity.Value;
             double newPrice = 0;
             if (!(name is null || name.Equals("")) &&
                 !(category is null || category.Equals("")) &&
-                !(price is null || price.Equals("") || !double.TryParse(price, out newPrice)))
+                !(price is null || price.Equals("") || !double.TryParse(price, out newPrice)) &&
+                !(quantity <= 0))
             {
-                NewProduct = new Product(name, category, newPrice);
+                NewProduct = new Product(name, category, newPrice, quantity);
                 this.Close();
             }
             else
