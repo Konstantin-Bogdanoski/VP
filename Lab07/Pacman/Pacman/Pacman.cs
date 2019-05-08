@@ -10,6 +10,7 @@ namespace Pacman
     enum Direction { Left, Right, Up, Down}
     class Pacman
     {
+        public bool [][]obstacleWorld {get; set;}
         public int X { get; set; }
         public int Y { get; set; }
         public Brush pacmanColor { get; set; }
@@ -20,8 +21,9 @@ namespace Pacman
         public int Radius = 20;
         public int formX { get; set; }
         public int formY { get; set; }
-        public Pacman(int formX, int formY)
+        public Pacman(int formX, int formY, bool [][]obstacleWorld)
         {
+            this.obstacleWorld = obstacleWorld;
             this.X = 7;
             this.Y = 5;
             this.Direction = Direction.Right;
@@ -48,52 +50,63 @@ namespace Pacman
         public void Move()
         {
             this.updateMouth();
+            int prevX = this.X;
+            int prevY = this.Y;
+
 
             if (this.Direction.Equals(Direction.Right)) // MOVING RIGHT
             {
-                if (this.X == formX)
-                {
-                    this.X = 0;
-                }
-                else
-                {
-                    this.X++;
-                }
+                 if (prevX == formX)
+                 {
+                    prevX = 0;
+                 }
+                 else
+                 {
+                    prevX++;
+                 }
+                
             }
             else if(this.Direction.Equals(Direction.Left)) // MOVING LEFT
             {
-                if (this.X == 0)
-                {
-                    this.X = formX;
-                }
-                else
-                {
-                    this.X--;
-                }
+                    if (prevX == 0)
+                    {
+                        prevX = formX;
+                    }
+                    else
+                    {
+                        prevX--;
+                    }
             }
             else if(this.Direction.Equals(Direction.Up)) // MOVING UP
             {
-                if (this.Y == 0)
+                if (prevY == 1)
                 {
-                    this.Y = formY;
+                    prevY = formY;
                 }
                 else
                 {
-                    this.Y--;
+                    prevY--;
                 }
             }
             else // MOVING DOWN
             {
-                if (this.Y == formY)
+                if (prevY == formY)
                 {
-                    this.Y = 0;
+                    prevY = 1;
                 }
                 else
                 {
-                    this.Y++;
+                    prevY++;
                 }
             }
+
+            if (obstacleWorld[prevY][prevX])
+            {
+                this.X = prevX;
+                this.Y = prevY;
+            }
         }
+
 
         public void Draw(Graphics graphics)
         {
