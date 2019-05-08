@@ -24,6 +24,7 @@ namespace Pacman
         int score = 0;
         int foodCount = 0;
         bool foodflag = true;
+        bool randomFlag = true;
 
         public Form1()
         {
@@ -113,7 +114,7 @@ namespace Pacman
                         {
                             foodWorld[i][j] = false;
                         }                        
-                        if (i == 3 && j < 4)
+                        /* if (i == 3 && j < 4)
                         {
                             g.DrawImageUnscaled(obstacleImage, j * 20 * 2 + (20 * 2 - obstacleImage.Height) / 2, i * 20 * 2 + (20 * 2 - obstacleImage.Width) / 2);
                             obstacleWorld[i][j] = false;
@@ -137,10 +138,28 @@ namespace Pacman
                         {
                             g.DrawImageUnscaled(obstacleImage, j * 20 * 2 + (20 * 2 - obstacleImage.Height) / 2, i * 20 * 2 + (20 * 2 - obstacleImage.Width) / 2);
                             obstacleWorld[i][j] = false;
-                        }
+                        } */
+                    }
+                    if(!obstacleWorld[i][j])
+                        g.DrawImageUnscaled(obstacleImage, j * 20 * 2 + (20 * 2 - obstacleImage.Height) / 2, i * 20 * 2 + (20 * 2 - obstacleImage.Width) / 2);
+                }
+            }
+
+            if (randomFlag)
+            {
+                randomFlag = false;
+                Random random = new Random();
+                for (int i = 0; i < 3; i++)
+                {
+                    int x = random.Next(foodWorld.Length - 5);
+                    for (int j = 0; j < 3; j++)
+                    {
+                        g.DrawImageUnscaled(obstacleImage, j * 20 * 2 + (20 * 2 - obstacleImage.Height) / 2, x+1 * 20 * 2 + (20 * 2 - obstacleImage.Width) / 2);
+                        obstacleWorld[x + 1][j] = false;
                     }
                 }
             }
+
             if (foodflag)
             {
                 foodflag = false;
