@@ -33,6 +33,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripCountRed = new System.Windows.Forms.ToolStripStatusLabel();
             this.CountRedBox = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTimeStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTimeValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +48,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripCountRed,
-            this.CountRedBox});
+            this.CountRedBox,
+            this.toolStripTimeStatus,
+            this.toolStripTimeValue});
             this.statusStrip1.Location = new System.Drawing.Point(0, 425);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 25);
@@ -56,14 +60,25 @@
             // toolStripCountRed
             // 
             this.toolStripCountRed.Name = "toolStripCountRed";
-            this.toolStripCountRed.Size = new System.Drawing.Size(137, 20);
-            this.toolStripCountRed.Text = "Red balls on screen";
+            this.toolStripCountRed.Size = new System.Drawing.Size(140, 20);
+            this.toolStripCountRed.Text = "Red balls on screen:";
             // 
             // CountRedBox
             // 
             this.CountRedBox.Name = "CountRedBox";
             this.CountRedBox.Size = new System.Drawing.Size(99, 20);
             this.CountRedBox.Text = "CountRedBox";
+            // 
+            // toolStripTimeStatus
+            // 
+            this.toolStripTimeStatus.Name = "toolStripTimeStatus";
+            this.toolStripTimeStatus.Size = new System.Drawing.Size(82, 20);
+            this.toolStripTimeStatus.Text = "Total Time:";
+            // 
+            // toolStripTimeValue
+            // 
+            this.toolStripTimeValue.Name = "toolStripTimeValue";
+            this.toolStripTimeValue.Size = new System.Drawing.Size(0, 20);
             // 
             // Form1
             // 
@@ -75,6 +90,7 @@
             this.Text = "Avoid Balls";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -89,6 +105,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripCountRed;
         private System.Windows.Forms.ToolStripStatusLabel CountRedBox;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripTimeStatus;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripTimeValue;
     }
 }
 

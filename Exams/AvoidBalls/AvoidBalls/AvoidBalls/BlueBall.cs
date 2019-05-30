@@ -14,21 +14,26 @@ namespace AvoidBalls
         public int Radius { get; set; }
         public bool IsHit { get; set; }
 
+        public BlueBall(Point Location)
+        {
+            this.Location = Location;
+            this.Color = Color.Blue;
+        }
+        
         public BlueBall()
         {
             this.Color = Color.Blue;
         }
-
         public void Draw(Graphics g)
         {
-            Brush brush = new SolidBrush(Color);
+            Brush brush = new SolidBrush(this.Color);
             g.FillEllipse(brush, Location.X - Radius / 2, Location.Y - Radius / 2, Radius, Radius);
             brush.Dispose();
         }
 
         public bool IsItHit(RedBall redBall)
         {
-            return ((Location.X - redBall.Location.X) * (Location.X - redBall.Location.X) -
+            return ((Location.X - redBall.Location.X) * (Location.X - redBall.Location.X) +
                 (Location.Y - redBall.Location.Y) * (Location.Y - redBall.Location.Y)) < 2*2*Radius*Radius;
         }
 

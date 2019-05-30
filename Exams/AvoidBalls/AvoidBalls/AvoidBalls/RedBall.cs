@@ -15,11 +15,11 @@ namespace AvoidBalls
         private float velocityX;
         private float velocityY;
 
-        public RedBall(Point Location, Color Color)
+        public RedBall(Point Location)
         {
             this.Location = Location;
             this.Radius = 20;
-            this.Color = Color;
+            this.Color = Color.Red;
             Velocity = 10;
             Random r = new Random();
             Angle = r.NextDouble() * 2 * Math.PI;
@@ -29,13 +29,13 @@ namespace AvoidBalls
 
         internal bool Touches(int x, int y)
         {
-            return IsItHit(new RedBall(new Point(x, y), Color.Red));
+            return IsItHit(new BlueBall(new Point(x, y)));
         }
 
-        public bool IsItHit(RedBall redBall)
+        public bool IsItHit(BlueBall blueBall)
         {
-            return ((Location.X - redBall.Location.X) * (Location.X - redBall.Location.X) -
-                (Location.Y - redBall.Location.Y) * (Location.Y - redBall.Location.Y)) < 2 * 2 * Radius * Radius;
+            return ((Location.X - blueBall.Location.X) * (Location.X - blueBall.Location.X) +
+                (Location.Y - blueBall.Location.Y) * (Location.Y - blueBall.Location.Y)) < 2 * 2 * Radius * Radius;
         }
 
         public void Draw(Graphics g)
@@ -50,9 +50,9 @@ namespace AvoidBalls
             int nextX = (int)(Location.X + velocityX);
             int nextY = (int)(Location.Y + velocityY);
             int lft = Radius;
-            int rgt = width - 2*Radius;
+            int rgt = width - 4*Radius;
             int tp = Radius;
-            int btm = height - 2*Radius;
+            int btm = height - 4*Radius;
 
             if (nextX <= lft)
             {

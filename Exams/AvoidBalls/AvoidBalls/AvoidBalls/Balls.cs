@@ -11,19 +11,20 @@ namespace AvoidBalls
     {
         public List<RedBall> redBalls { get; set; }
         public BlueBall blueBall { get; set; }
-        public Balls()
+        public Balls(Point mouseLoc)
         {
             redBalls = new List<RedBall>();
-            blueBall = new BlueBall();
+            blueBall = new BlueBall(mouseLoc);
         }
 
         public void Draw(Graphics g)
         {
+            blueBall.Draw(g);
             redBalls.ForEach(ball =>
             {
                 ball.Draw(g);
             });
-            blueBall.Draw(g);
+            
         }
 
         public void AddBall(RedBall ball)
@@ -31,8 +32,10 @@ namespace AvoidBalls
             redBalls.Add(ball);
         }
 
-        public void Move(int width, int height)
+        public void Move(int width, int height, Point location)
         {
+            blueBall.Move(location);
+
             redBalls.ForEach(ball =>
             {
                 ball.Move(width, height);

@@ -15,12 +15,14 @@ namespace AvoidBalls
         public Balls balls { get; set; }
         public bool flag { get; set; }
         public int timerCounter { get; set; }
+        private int totalTime { get; set; }
         public Form1()
         {
             this.DoubleBuffered = true;
             flag = false;
+            this.totalTime = 0;
             InitializeComponent();
-            balls = new Balls();
+            balls = new Balls(MousePosition);
             Random random = new Random();
             while(balls.redBalls.Count < 2)
             {
@@ -34,21 +36,15 @@ namespace AvoidBalls
                 }
                 if (!touches)
                 {
-                    RedBall ball = new RedBall(new Point(x, y), Color.Red);
+                    RedBall ball = new RedBall(new Point(x, y));
                     balls.redBalls.Add(ball);
                 }
             }
-            balls.blueBall.Location = Control.MousePosition;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            balls.blueBall.Draw(e.Graphics);
-            balls.redBalls.ForEach(ball =>
-            {
-                ball.Draw(e.Graphics);
-            });
-            
+            balls.Draw(e.Graphics);
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -57,24 +53,37 @@ namespace AvoidBalls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            balls.Move(this.Width, this.Height);
+            balls.Move(this.Width, this.Height, MousePosition);
+            balls.blueBall.Move(Control.MousePosition);
             timerCounter++;
-            if(timerCounter >= 50)
+
+            if (timerCounter % 10 == 0)
+                    totalTime++;
+
+            if (timerCounter >= 50)
             {
                 Random random = new Random();
                 int x = random.Next(20, this.Width - 20);
                 int y = random.Next(20, this.Height - 20);
-                RedBall red = new RedBall(new Point(x, y), Color.Red);
+                RedBall red = new RedBall(new Point(x, y));
                 balls.AddBall(red);
                 timerCounter = 0;
             }
             this.CountRedBox.Text = balls.redBalls.Count.ToString();
+            TimeSpan ts = TimeSpan.FromSeconds(totalTime);            
+            this.toolStripTimeValue.Text = ts.ToString(@"hh\:mm\:ss");
             Invalidate(true);
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             balls.blueBall.Location = e.Location;
+            Invalidate(true);
+        }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            balls.blueBall = new BlueBall(e.Location);
             Invalidate(true);
         }
     }
